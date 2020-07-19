@@ -1,6 +1,9 @@
-import posts from "./_posts.js";
+import loadPosts from "./_loadPosts.js";
+
+const posts = loadPosts("src/posts");
 
 const lookup = new Map();
+
 posts.forEach((post) => {
   lookup.set(post.slug, JSON.stringify(post));
 });
