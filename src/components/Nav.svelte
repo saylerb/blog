@@ -70,5 +70,12 @@ the blog data when we hover over the link or tap it on a touchscreen -->
         blog
       </a>
     </li>
+    <li>
+      <a
+        aria-current={segment === 'contact' ? 'page' : undefined}
+        href="contact">
+        contact
+      </a>
+    </li>
   </ul>
 </nav>
