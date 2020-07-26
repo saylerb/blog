@@ -1,7 +1,7 @@
-import loadPosts from "./_loadPosts";
+import { allPosts } from "./_loadPosts";
 
 export function get(req, res) {
-  const posts = loadPosts("src/posts");
+  const posts = allPosts();
 
   const json = JSON.stringify(posts);
 

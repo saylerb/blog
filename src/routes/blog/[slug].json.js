@@ -1,24 +1,18 @@
-import loadPosts from "./_loadPosts.js";
-
-const posts = loadPosts("src/posts");
-
-const lookup = new Map();
-
-posts.forEach((post) => {
-  lookup.set(post.slug, JSON.stringify(post));
-});
+import { onePost } from "./_loadPosts.js";
 
 export function get(req, res, next) {
   // the `slug` parameter is available because
   // this file is called [slug].json.js
   const { slug } = req.params;
 
-  if (lookup.has(slug)) {
+  const post = onePost(slug);
+
+  if (typeof post !== "undefined") {
     res.writeHead(200, {
       "Content-Type": "application/json",
     });
 
-    res.end(lookup.get(slug));
+    res.end(JSON.stringify(post));
   } else {
     res.writeHead(404, {
       "Content-Type": "application/json",
