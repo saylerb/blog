@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import marked from "marked";
+import grayMatter from "gray-matter";
 
 const renderer = new marked.Renderer();
 
@@ -9,14 +10,13 @@ marked.use({ renderer });
 const POSTS_DIR = "src/posts";
 
 export function allPosts() {
-  return fs.readdirSync(POSTS_DIR).map((fileName, index) => {
-    return onePost(fileName, index);
+  return fs.readdirSync(POSTS_DIR).map((fileName) => {
+    return onePost(fileName);
   });
 }
 
-export function onePost(fileName, index = Math.floor(10 * Math.random())) {
+export function onePost(fileName) {
   let file;
-
   try {
     file = fs.readFileSync(path.resolve(POSTS_DIR, fileName), "utf-8");
   } catch (error) {
@@ -27,9 +27,11 @@ export function onePost(fileName, index = Math.floor(10 * Math.random())) {
     throw error;
   }
 
+  const { data, content } = grayMatter(file);
+  const html = marked(content);
+
   return {
-    title: "post " + index,
-    slug: fileName,
-    html: marked(file),
+    ...data,
+    html,
   };
 }

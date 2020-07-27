@@ -5,7 +5,9 @@ export function get(req, res, next) {
   // this file is called [slug].json.js
   const { slug } = req.params;
 
-  const post = onePost(slug);
+  const fileName = slug + ".md";
+
+  const post = onePost(fileName);
 
   if (typeof post !== "undefined") {
     res.writeHead(200, {
