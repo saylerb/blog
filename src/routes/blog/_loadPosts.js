@@ -10,9 +10,10 @@ marked.use({ renderer });
 const POSTS_DIR = "src/posts";
 
 export function allPosts() {
-  return fs.readdirSync(POSTS_DIR).map((fileName) => {
+  const posts = fs.readdirSync(POSTS_DIR).map((fileName) => {
     return onePost(fileName);
   });
+  return posts.sort((a, b) => new Date(b.date) - new Date(a.date));
 }
 
 export function onePost(fileName) {
