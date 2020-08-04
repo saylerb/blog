@@ -1,8 +1,9 @@
 ---
-title: Hello World
+title: First Post
 slug: first-post
+date: "2020-01-01"
 ---
 
-## Hello World
+## First Post
 
 Example of a first post.
