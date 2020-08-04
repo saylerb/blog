@@ -8,7 +8,7 @@
 
   h1 {
     font-size: 2.8em;
-    text-transform: uppercase;
+    text-transform: capitalize;
     font-weight: 700;
     margin: 0 0 0.5em 0;
   }
@@ -38,15 +38,4 @@
   <title>Sapper project template</title>
 </svelte:head>
 
-<h1>Great success!</h1>
-
-<figure>
-  <img alt="Success Kid" src="successkid.jpg" />
-  <figcaption>Have fun with Sapper!</figcaption>
-</figure>
-
-<p>
-  <strong>
-    Try editing this file (src/routes/index.svelte) to test live reloading.
-  </strong>
-</p>
+<h1>Brian Sayler</h1>
