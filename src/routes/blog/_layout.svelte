@@ -1,4 +1,5 @@
 <script context="module">
+  import { fly } from "svelte/transition";
   export function preload({ params, query }) {
     return this.fetch(`blog.json`)
       .then((r) => r.json())
@@ -18,6 +19,11 @@
     display: grid;
     grid-template-columns: 3fr 1fr;
   }
+
+  ul {
+    list-style: none;
+    padding-inline-start: 0;
+  }
 </style>
 
 <main class="two-col">
@@ -25,11 +31,15 @@
     <slot />
   </div>
   {#if segment}
-    <aside>
+    <aside transition:fly={{ x: 100 }}>
       <h2>Post Archive</h2>
       <ul>
         {#each posts as post}
-          <li>{post.title}</li>
+          <li>
+            <a rel="prefetch" href="blog/{post.slug}">
+              {post.title} - {post.date}
+            </a>
+          </li>
         {/each}
       </ul>
     </aside>
