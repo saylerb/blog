@@ -1,5 +1,6 @@
 <script>
   import Nav from "../components/Nav.svelte";
+  import { fadeIn, fadeOut } from "../animate";
 
   export let segment;
 </script>

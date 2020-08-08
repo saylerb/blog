@@ -1,7 +1,14 @@
+<script>
+  import { fadeIn, fadeOut } from "../animate";
+</script>
+
 <svelte:head>
   <title>Contact</title>
 </svelte:head>
 
-<h1>Contact</h1>
+<div in:fadeIn out:fadeOut>
 
-<a href="https://github.com/saylerb">Github</a>
+  <h1>Contact</h1>
+
+  <a href="https://github.com/saylerb">Github</a>
+</div>

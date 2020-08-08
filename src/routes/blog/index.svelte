@@ -9,6 +9,8 @@
 </script>
 
 <script>
+  import { fadeIn, fadeOut } from "../../animate";
+
   export let posts;
 </script>
 
@@ -23,12 +25,15 @@
   <title>Blog</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
+<div in:fadeIn out:fadeOut>
 
-<ul>
-  {#each posts as post}
-    <li>
-      <a rel="prefetch" href="blog/{post.slug}">{post.title} - {post.date}</a>
-    </li>
-  {/each}
-</ul>
+  <h1>Recent posts</h1>
+
+  <ul>
+    {#each posts as post}
+      <li>
+        <a rel="prefetch" href="blog/{post.slug}">{post.title} - {post.date}</a>
+      </li>
+    {/each}
+  </ul>
+</div>

@@ -1,3 +1,7 @@
+<script>
+  import { fadeIn, fadeOut } from "../animate";
+</script>
+
 <style>
   h1 {
     font-size: 2.8em;
@@ -14,7 +18,9 @@
 </style>
 
 <svelte:head>
-  <title>Sapper project template</title>
+  <title>Brian's Blog</title>
 </svelte:head>
 
-<h1>Brian Sayler</h1>
+<div in:fadeIn out:fadeOut>
+  <h1>Brian Sayler</h1>
+</div>

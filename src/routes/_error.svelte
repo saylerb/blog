@@ -1,4 +1,6 @@
 <script>
+  import { fadeIn, fadeOut } from "../animate";
+
   export let status;
   export let error;
 
@@ -32,10 +34,12 @@
   <title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
+<div in:fadeIn out:fadeOut>
+s  <h1>{status}</h1>
 
-<p>{error.message}</p>
+  <p>{error.message}</p>
 
-{#if dev && error.stack}
-  <pre>{error.stack}</pre>
-{/if}
+  {#if dev && error.stack}
+    <pre>{error.stack}</pre>
+  {/if}
+</div>
