@@ -26,8 +26,7 @@
 </svelte:head>
 
 <div in:fadeIn out:fadeOut>
-
-  <h1>Recent posts</h1>
+  <h1>Posts</h1>
 
   <ul>
     {#each posts as post}

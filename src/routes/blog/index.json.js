@@ -1,7 +1,7 @@
 import { allPosts } from "./_loadPosts";
 
 export function get(req, res) {
-  const posts = allPosts();
+  const posts = allPosts().filter((post) => post.published);
 
   const json = JSON.stringify(posts);
 

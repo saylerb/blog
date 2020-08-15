@@ -1,12 +1,12 @@
 <script>
-  import { fadeIn, fadeOut } from "../animate";
+  import { fadeIn } from "../animate";
 </script>
 
 <svelte:head>
   <title>About</title>
 </svelte:head>
 
-<div in:fadeIn out:fadeOut>
+<div in:fadeIn out:fadeIn>
 
   <h1>About this site</h1>
 
