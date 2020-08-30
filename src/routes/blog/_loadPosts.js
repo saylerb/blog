@@ -2,8 +2,15 @@ import fs from "fs";
 import path from "path";
 import marked from "marked";
 import grayMatter from "gray-matter";
+import prism from "prismjs";
 
 const renderer = new marked.Renderer();
+
+renderer.code = (code, language) => {
+  const parser = prism.languages[language] || prism.languages.html;
+  const highlighted = prism.highlight(code, parser, language);
+  return `<pre class="language-${language}"><code class="language-${language}">${highlighted}</code></pre>`;
+};
 
 marked.use({ renderer });
 
