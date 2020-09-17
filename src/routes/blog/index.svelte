@@ -31,6 +31,7 @@
   <ul>
     {#each posts as post}
       <li>
+        {#if !post.published}(Unpublished){/if}
         <a rel="prefetch" href="blog/{post.slug}">{post.title} - {post.date}</a>
       </li>
     {/each}

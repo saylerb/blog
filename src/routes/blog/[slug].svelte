@@ -60,6 +60,9 @@
 </svelte:head>
 
 <div in:fadeIn out:fadeIn>
+  <p>
+    {#if !post.published}(Unpublished){/if}
+  </p>
   <h1>{post.title}</h1>
 
   <div class="content">
