@@ -12,3 +12,6 @@
 - How does a lockfile really work?
 - Clever applications of Modular math (e.g. rocks paper scissors idea)
 - setting up multiple git/ssh configs to work with multiple keys
+- Explain CORS and an overview of browsers and servers' role
+- Authenication methods in node
+- how git bisect works
