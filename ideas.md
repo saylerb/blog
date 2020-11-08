@@ -15,3 +15,4 @@
 - Explain CORS and an overview of browsers and servers' role
 - Authenication methods in node
 - how git bisect works
+- AWS study plan
