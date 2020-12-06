@@ -35,6 +35,11 @@ code {
   border-radius: 2px;
 }
 
+blockquote {
+  background-color: #f0f0f0;
+  padding: 2px;
+}
+
 @media (min-width: 400px) {
   body {
     font-size: 16px;

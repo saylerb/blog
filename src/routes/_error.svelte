@@ -35,7 +35,7 @@
 </svelte:head>
 
 <div in:fadeIn out:fadeOut>
-s  <h1>{status}</h1>
+  <h1>{status}</h1>
 
   <p>{error.message}</p>
 
